@@ -1,4 +1,4 @@
-import pygame
+from settings import * 
 from random import uniform
 from support import draw_bar
 from timer import Timer
