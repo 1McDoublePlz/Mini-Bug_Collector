@@ -72,32 +72,32 @@ class Game:
 
 
 	def import_assets(self):
-		self.tmx_maps = tmx_importer('..', 'data', 'maps')
+		self.tmx_maps = tmx_importer('data','maps')
 
 		self.overworld_frames = {
-			'water': import_folder('..', 'graphics', 'tilesets', 'water'),
-			'coast': coast_importer(24, 12, '..', 'graphics', 'tilesets', 'coast'),
-			'characters': all_character_import('..', 'graphics', 'characters')
+			'water': import_folder('graphics','tilesets','water'),
+			'coast': coast_importer(24, 12,'graphics', 'tilesets', 'coast'),
+			'characters': all_character_import('graphics', 'characters')
 		}
 
 		self.monster_frames = {
-			'icons': import_folder_dict('..', 'graphics', 'icons'),
-			'monsters': monster_importer(4,2,'..', 'graphics', 'monsters'),
-			'ui': import_folder_dict('..', 'graphics', 'ui'),
-			'attacks': attack_importer('..', 'graphics', 'attacks')
+			'icons': import_folder_dict('graphics', 'icons'),
+			'monsters': monster_importer(4,2,'graphics', 'monsters'),
+			'ui': import_folder_dict('graphics', 'ui'),
+			'attacks': attack_importer('graphics', 'attacks')
 		}
 		self.monster_frames['outlines'] = outline_creator(self.monster_frames['monsters'], 4)
 
 		self.fonts = {
-			'dialog': pygame.font.Font(join('..', 'graphics', 'fonts', 'PixeloidSans.ttf'), 30),
-			'regular': pygame.font.Font(join('..', 'graphics', 'fonts', 'PixeloidSans.ttf'), 18),
-			'small': pygame.font.Font(join('..', 'graphics', 'fonts', 'PixeloidSans.ttf'), 14),
-			'bold': pygame.font.Font(join('..', 'graphics', 'fonts', 'dogicapixelbold.otf'), 20),
+			'dialog': pygame.font.Font(join('graphics', 'fonts', 'PixeloidSans.ttf'), 30),
+			'regular': pygame.font.Font(join('graphics', 'fonts', 'PixeloidSans.ttf'), 18),
+			'small': pygame.font.Font(join('graphics', 'fonts', 'PixeloidSans.ttf'), 14),
+			'bold': pygame.font.Font(join('graphics', 'fonts', 'dogicapixelbold.otf'), 20),
 		}
-		self.bg_frames = import_folder_dict('..', 'graphics', 'backgrounds')
-		self.start_animation_frames = import_folder('..', 'graphics', 'other', 'star animation')
+		self.bg_frames = import_folder_dict('graphics', 'backgrounds')
+		self.start_animation_frames = import_folder('graphics', 'other', 'star animation')
 	
-		self.audio = audio_importer('..', 'audio')
+		self.audio = audio_importer('audio')
 
 	def setup(self, tmx_map, player_start_pos):
 		# clear the map
